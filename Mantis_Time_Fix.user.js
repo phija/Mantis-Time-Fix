@@ -6,7 +6,7 @@
 // @include     *://trackerUrl/*
 // @grant       none
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
-// version      0.1.0
+// @version      0.1.1
 // ==/UserScript==
 
 var timeToSet = "20:00";
