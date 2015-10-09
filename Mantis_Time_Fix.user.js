@@ -6,7 +6,7 @@
 // @include     *://trackerUrl/*
 // @grant       none
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
-// @version      0.1.1
+// @version      0.2
 // ==/UserScript==
 
 var timeToSet = "20:00";
@@ -30,16 +30,19 @@ function plantEventFunction() {
   
   var element = document.getElementById("due_date");
   // on every change, set the time to "timeToSet"
-  element.onchange = function() {    
-    focusedValue = this.value;
-    var dateAndTime = this.value.split(" ");
-    if (dateAndTime.length == 2)
-    {
-      dateAndTime[1] = timeToSet;
-      this.value = dateAndTime.join(" ");
-      console.log("fixed time to " + timeToSet);
+  if (element)
+  {
+    element.onchange = function() {    
+      focusedValue = this.value;
+      var dateAndTime = this.value.split(" ");
+      if (dateAndTime.length == 2)
+      {
+        dateAndTime[1] = timeToSet;
+        this.value = dateAndTime.join(" ");
+        console.log("fixed time to " + timeToSet);
+      }
     }
-  }  
+  }
 }
 
 plantEventFunction();
